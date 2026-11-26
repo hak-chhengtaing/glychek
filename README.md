@@ -1,0 +1,2 @@
+# glychek
+glychek . KSIT
