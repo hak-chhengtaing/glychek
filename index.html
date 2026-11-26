@@ -1,0 +1,3349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlyChek — Eco-Banana Stem Cassava Packaging</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* ========================================================================
+1. CSS VARIABLES & APPLE GLASS THEME TOKENS
+         ======================================================================== */
+      :root {
+        --bg-page: #f4f9f5;
+        --bg-alt: #e9f4ec;
+        --bg-card: rgba(255, 255, 255, 0.72);
+        --border-card: rgba(22, 128, 60, 0.28);
+        --text-main: #13221a;
+        --text-muted: #466051;
+
+        --green-dark: #05442f;
+        --green-mid: #0d6236;
+        --green-primary: #16803c;
+        --green-bright: #35b85a;
+        --green-lime: #a3d977;
+
+        /* Apple Liquid Glass Tokens (Light Mode) */
+        --glass-bg: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.34) 0%,
+          rgba(255, 255, 255, 0.12) 55%,
+          rgba(163, 217, 119, 0.18) 100%
+        );
+        --glass-card-bg: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.86) 0%,
+          rgba(244, 251, 246, 0.66) 100%
+        );
+        --glass-border: rgba(255, 255, 255, 0.55);
+        --glass-specular:
+          0 16px 38px rgba(6, 78, 54, 0.12),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.85),
+          inset 0 -1px 1px rgba(22, 128, 60, 0.1);
+
+        /* Frosted Glass Navbar Tokens (Light Mode) */
+        --nav-scrolled-bg: rgba(255, 255, 255, 0.68);
+        --nav-scrolled-border: rgba(255, 255, 255, 0.75);
+        --nav-scrolled-shadow:
+          0 12px 32px rgba(6, 78, 54, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        --nav-text-scrolled: #13221a;
+        --control-bg-scrolled: rgba(255, 255, 255, 0.65);
+        --control-border-scrolled: rgba(22, 128, 60, 0.22);
+
+        --team-avatar-bg: #f3faf5;
+        --footer-bg: #042b1e;
+        --footer-border: #0c4c36;
+        --footer-text: #e6f4ec;
+
+        --spring-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+        --font-sans:
+          "Inter", "Kantumruy Pro", system-ui, -apple-system, sans-serif;
+        --font-display: "Poppins", "Kantumruy Pro", system-ui, sans-serif;
+        --font-khmer: "Kantumruy Pro", "Inter", system-ui, sans-serif;
+      }
+
+      body.dark {
+        --bg-page: #08120d;
+        --bg-alt: #0c1913;
+        --bg-card: rgba(17, 33, 25, 0.68);
+        --border-card: rgba(163, 217, 119, 0.32);
+        --text-main: #eaf4ed;
+        --text-muted: #a8c2b1;
+
+        /* Apple Liquid Glass Tokens (Dark Mode) */
+        --glass-bg: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.14) 0%,
+          rgba(255, 255, 255, 0.04) 55%,
+          rgba(163, 217, 119, 0.12) 100%
+        );
+        --glass-card-bg: linear-gradient(
+          145deg,
+          rgba(22, 42, 32, 0.78) 0%,
+          rgba(13, 26, 19, 0.62) 100%
+        );
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --glass-specular:
+          0 18px 42px rgba(0, 0, 0, 0.45),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.24),
+          inset 0 -1px 1px rgba(163, 217, 119, 0.1);
+
+        /* Frosted Glass Navbar Tokens (Dark Mode) */
+        --nav-scrolled-bg: rgba(9, 19, 14, 0.68);
+        --nav-scrolled-border: rgba(163, 217, 119, 0.24);
+        --nav-scrolled-shadow:
+          0 12px 32px rgba(0, 0, 0, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        --nav-text-scrolled: #eaf4ed;
+        --control-bg-scrolled: rgba(17, 33, 25, 0.65);
+        --control-border-scrolled: rgba(163, 217, 119, 0.25);
+
+        --team-avatar-bg: #112119;
+        --footer-bg: #050c09;
+        --footer-border: #1a3024;
+        --footer-text: #d8e9df;
+      }
+
+      /* ========================================================================
+2. KEYFRAME ANIMATIONS (AURORA + BANANA TREE SWAY + CASSAVA FLOAT)
+         ======================================================================== */
+      @keyframes bgAuroraShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes bananaSway {
+        0%,
+        100% {
+          transform: rotate(-2.8deg) translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: rotate(3.2deg) translate3d(10px, -12px, 0) scale(1.035);
+        }
+      }
+
+      @keyframes bananaSwayFlipped {
+        0%,
+        100% {
+          transform: scaleX(-1) rotate(-2.5deg) translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: scaleX(-1) rotate(3deg) translate3d(-10px, -10px, 0)
+            scale(1.035);
+        }
+      }
+
+      @keyframes cassavaFloat {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) rotate(-3.5deg) scale(1);
+        }
+        35% {
+          transform: translate3d(14px, -18px, 0) rotate(2.5deg) scale(1.045);
+        }
+        70% {
+          transform: translate3d(-10px, -8px, 0) rotate(-1.5deg) scale(0.98);
+        }
+      }
+
+      @keyframes cassavaFloatFlipped {
+        0%,
+        100% {
+          transform: scaleX(-1) translate3d(0, 0, 0) rotate(-3deg) scale(1);
+        }
+        40% {
+          transform: scaleX(-1) translate3d(-14px, -16px, 0) rotate(2.5deg)
+            scale(1.04);
+        }
+        75% {
+          transform: scaleX(-1) translate3d(8px, -6px, 0) rotate(-1deg)
+            scale(0.985);
+        }
+      }
+
+      @keyframes gentleBob {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+
+      /* ========================================================================
+3. RESET & BASE STYLES
+         ======================================================================== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+        transition:
+          background-color 0.4s var(--spring-ease),
+          color 0.4s var(--spring-ease);
+      }
+
+      body.lang-km,
+      body.lang-km h1,
+      body.lang-km h2,
+      body.lang-km h3 {
+        font-family: var(--font-khmer);
+      }
+
+      h1,
+      h2,
+      h3,
+      .font-display {
+        font-family: var(--font-display);
+      }
+      .font-khmer {
+        font-family: var(--font-khmer);
+      }
+
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: inherit;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+      @media (min-width: 640px) {
+        .container {
+          padding: 0 1.5rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .container {
+          padding: 0 2rem;
+        }
+      }
+
+      .section {
+        position: relative;
+        overflow: hidden;
+        padding: 5rem 0;
+      }
+      @media (min-width: 768px) {
+        .section {
+          padding: 6.5rem 0;
+        }
+      }
+      .section-alt {
+        background-color: var(--bg-alt);
+      }
+
+      .section-header {
+        max-width: 48rem;
+        margin: 0 auto 3.5rem;
+        text-align: center;
+      }
+
+      /* Scroll Reveal Animation Class */
+      [data-reveal] {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0) scale(0.97);
+        transition:
+          opacity 0.75s var(--spring-ease),
+          transform 0.75s var(--spring-ease);
+        will-change: opacity, transform;
+      }
+      [data-reveal].revealed {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      /* Specular Apple Glass Sheen Utility (Hover Reflection) */
+      .glass-sheen {
+        position: relative;
+        overflow: hidden;
+      }
+      .glass-sheen::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -75%;
+        width: 55%;
+        height: 200%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.34),
+          transparent
+        );
+        transform: rotate(24deg);
+        pointer-events: none;
+        transition: left 0.75s var(--spring-ease);
+      }
+      .glass-sheen:hover::after {
+        left: 135%;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.38rem 0.95rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        background: var(--glass-card-bg);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid var(--border-card);
+        box-shadow: var(--glass-specular);
+        color: var(--green-primary);
+        transition:
+          transform 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease);
+      }
+      .eyebrow:hover {
+        transform: translateY(-2px) scale(1.03);
+      }
+      body.dark .eyebrow {
+        color: var(--green-lime);
+      }
+
+      .section-title {
+        font-size: clamp(1.6rem, 3.2vw, 2.35rem);
+        font-weight: 700;
+        margin-top: 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .section-subtitle {
+        margin-top: 1rem;
+        font-size: 0.98rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      /* ========================================================================
+4. ANIMATED BANANA TREE & CASSAVA BACKGROUND LAYER
+         ======================================================================== */
+      .botanical-bg-layer {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .parallax-wrap {
+        position: absolute;
+        will-change: transform;
+        pointer-events: none;
+      }
+
+      .botanical-item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        will-change: transform;
+      }
+
+      .botanical-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        user-select: none;
+        -webkit-user-drag: none;
+        transition:
+          opacity 0.5s ease,
+          filter 0.5s ease;
+      }
+
+      /* Banana Tree Breeze Sway */
+      .botanical-banana {
+        transform-origin: bottom center;
+        animation: bananaSway 8.5s ease-in-out infinite;
+      }
+      .botanical-banana.flipped {
+        animation: bananaSwayFlipped 9.5s ease-in-out infinite;
+      }
+
+      /* Cassava Root Floating Drift */
+      .botanical-cassava {
+        transform-origin: center center;
+        animation: cassavaFloat 10.5s ease-in-out infinite;
+      }
+      .botanical-cassava.flipped {
+        animation: cassavaFloatFlipped 11.5s ease-in-out infinite;
+      }
+
+      /* Visibility & Depth Styling on Dark Emerald Sections (Hero & Vision) */
+      .botanical-bg-layer.on-dark .botanical-banana img {
+        opacity: 0.3;
+        filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.42)) saturate(1.15);
+      }
+      .botanical-bg-layer.on-dark .botanical-cassava img {
+        opacity: 0.28;
+        filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.45)) brightness(1.12)
+          contrast(1.05);
+      }
+      .botanical-bg-layer.on-dark .botanical-soft img {
+        opacity: 0.16;
+        filter: blur(1.5px) drop-shadow(0 14px 28px rgba(0, 0, 0, 0.35));
+      }
+
+      /* Visibility & Depth Styling on Light/Dark Mode Sections (Process & Team) */
+      .botanical-bg-layer.on-surface .botanical-banana img {
+        opacity: 0.2;
+        filter: drop-shadow(0 12px 24px rgba(6, 78, 54, 0.14));
+      }
+      .botanical-bg-layer.on-surface .botanical-cassava img {
+        opacity: 0.18;
+        filter: drop-shadow(0 12px 24px rgba(6, 78, 54, 0.14));
+      }
+      body.dark .botanical-bg-layer.on-surface .botanical-banana img {
+        opacity: 0.18;
+        filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.5)) brightness(0.92);
+      }
+      body.dark .botanical-bg-layer.on-surface .botanical-cassava img {
+        opacity: 0.16;
+        filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.5)) brightness(1.05);
+      }
+
+      /* Safe Fallback if Opened Directly via file:// (Non-Server Mode) */
+      .botanical-bg-layer.on-surface img.fallback-blend {
+        mix-blend-mode: multiply;
+      }
+      body.dark .botanical-bg-layer.on-surface img.fallback-blend,
+      .botanical-bg-layer.on-dark img.fallback-blend {
+        mix-blend-mode: luminosity;
+        opacity: 0.18;
+        -webkit-mask-image: radial-gradient(
+          ellipse 68% 68% at 50% 50%,
+          #000 42%,
+          transparent 76%
+        );
+        mask-image: radial-gradient(
+          ellipse 68% 68% at 50% 50%,
+          #000 42%,
+          transparent 76%
+        );
+      }
+
+      /* Responsive Scaling for Mobile Screens */
+      @media (max-width: 767px) {
+        .botanical-bg-layer .parallax-wrap {
+          transform-origin: center;
+          max-width: 62vw;
+          opacity: 0.72;
+        }
+      }
+
+      /* ========================================================================
+5. HEADER / STICKY APPLE GLASS NAVBAR
+         ======================================================================== */
+      .navbar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 50;
+        background: rgba(5, 68, 47, 0.86);
+        backdrop-filter: blur(22px) saturate(180%);
+        -webkit-backdrop-filter: blur(22px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        transition:
+          background 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease),
+          border-color 0.35s var(--spring-ease);
+      }
+      .navbar.scrolled {
+        background: var(--nav-scrolled-bg);
+        backdrop-filter: blur(24px) saturate(200%);
+        -webkit-backdrop-filter: blur(24px) saturate(200%);
+        border-bottom: 1px solid var(--nav-scrolled-border);
+        box-shadow: var(--nav-scrolled-shadow);
+      }
+      .navbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+      }
+      @media (min-width: 768px) {
+        .navbar-inner {
+          height: 5.5rem;
+        }
+      }
+
+      .brand-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        text-align: left;
+        transition: transform 0.3s var(--spring-ease);
+      }
+      .brand-btn:hover {
+        transform: scale(1.03);
+      }
+      .brand-name {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #ffffff;
+        display: block;
+      }
+      .navbar.scrolled .brand-name {
+        color: var(--green-dark);
+      }
+      body.dark .navbar.scrolled .brand-name {
+        color: #ffffff;
+      }
+
+      .brand-sub {
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--green-lime);
+        display: block;
+        margin-top: 0.25rem;
+      }
+      .navbar.scrolled .brand-sub {
+        color: var(--green-primary);
+      }
+      body.dark .navbar.scrolled .brand-sub {
+        color: var(--green-lime);
+      }
+
+      .nav-desktop {
+        display: none;
+        align-items: center;
+        gap: 0.3rem;
+      }
+      @media (min-width: 900px) {
+        .nav-desktop {
+          display: flex;
+        }
+      }
+
+      .nav-link {
+        padding: 0.5rem 0.95rem;
+        border-radius: 0.75rem;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+        border: 1px solid transparent;
+        transition: all 0.28s var(--spring-ease);
+      }
+      .nav-link:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.16);
+        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-1px);
+      }
+      .nav-link.active {
+        color: var(--green-lime);
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      }
+
+      .navbar.scrolled .nav-link {
+        color: var(--nav-text-scrolled);
+      }
+      .navbar.scrolled .nav-link:hover {
+        color: var(--green-primary);
+        background: rgba(22, 128, 60, 0.1);
+        border-color: rgba(22, 128, 60, 0.2);
+      }
+      body.dark .navbar.scrolled .nav-link:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .navbar.scrolled .nav-link.active {
+        color: var(--green-primary);
+        background: rgba(22, 128, 60, 0.14);
+        border-color: rgba(22, 128, 60, 0.25);
+        font-weight: 600;
+      }
+      body.dark .navbar.scrolled .nav-link.active {
+        color: var(--green-lime);
+        background: rgba(163, 217, 119, 0.16);
+        border-color: rgba(163, 217, 119, 0.3);
+      }
+
+      .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .ctrl-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.55rem 0.78rem;
+        border-radius: 0.8rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.16);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        color: #ffffff;
+        transition: all 0.28s var(--spring-ease);
+      }
+      .ctrl-btn:hover {
+        background: rgba(255, 255, 255, 0.26);
+        transform: translateY(-2px) scale(1.04);
+      }
+      .navbar.scrolled .ctrl-btn {
+        background: var(--control-bg-scrolled);
+        border-color: var(--control-border-scrolled);
+        color: var(--green-dark);
+      }
+      body.dark .navbar.scrolled .ctrl-btn {
+        color: #eaf4ed;
+      }
+      .ctrl-btn.icon-only {
+        padding: 0.6rem;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+      }
+      @media (min-width: 900px) {
+        .mobile-menu-toggle {
+          display: none;
+        }
+      }
+
+      .mobile-drawer {
+        display: none;
+        background: var(--nav-scrolled-bg);
+        backdrop-filter: blur(22px) saturate(190%);
+        -webkit-backdrop-filter: blur(22px) saturate(190%);
+        border-bottom: 1px solid var(--nav-scrolled-border);
+      }
+      .mobile-drawer.open {
+        display: block;
+      }
+      .mobile-drawer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 1rem;
+      }
+      .mobile-nav-link {
+        padding: 0.65rem 0.9rem;
+        border-radius: 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: left;
+        color: var(--text-main);
+        transition: all 0.25s var(--spring-ease);
+      }
+      .mobile-nav-link.active {
+        background: var(--green-primary);
+        color: #ffffff;
+      }
+
+      /* ========================================================================
+6. HOME / HERO SECTION (ANIMATED AURORA + BANANA TREE & CASSAVA)
+         ======================================================================== */
+      .hero {
+        position: relative;
+        padding: 4.5rem 0 5rem;
+        overflow: hidden;
+        background: linear-gradient(
+          -45deg,
+          #043927,
+          #064e36,
+          #0e6739,
+          #16803c,
+          #095932
+        );
+        background-size: 320% 320%;
+        animation: bgAuroraShift 14s ease infinite;
+        color: #ffffff;
+      }
+      @media (min-width: 768px) {
+        .hero {
+          padding: 5.5rem 0 6.5rem;
+        }
+      }
+
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      @media (min-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* Large Triple-Logo Apple Glass Pill in Hero (CPC + CAFST + KSIT, No Text) */
+      .hero-logos-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 0.55rem 0.85rem;
+        border-radius: 9999px;
+        background: var(--glass-bg);
+        border: 1.5px solid rgba(255, 255, 255, 0.42);
+        backdrop-filter: blur(20px) saturate(190%);
+        -webkit-backdrop-filter: blur(20px) saturate(190%);
+        box-shadow:
+          0 14px 30px rgba(4, 38, 26, 0.25),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.65);
+        margin-bottom: 1.35rem;
+        transition:
+          transform 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease),
+          border-color 0.35s var(--spring-ease);
+      }
+      @media (max-width: 420px) {
+        .hero-logos-pill {
+          gap: 0.55rem;
+          padding: 0.45rem 0.65rem;
+        }
+      }
+      .hero-logos-pill:hover {
+        transform: translateY(-3px) scale(1.03);
+        border-color: rgba(255, 255, 255, 0.85);
+        box-shadow:
+          0 18px 36px rgba(4, 38, 26, 0.35),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.9);
+      }
+
+      .hero-logo-slot {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 9999px;
+        transition: transform 0.3s var(--spring-ease);
+      }
+      .hero-logo-slot:hover,
+      .hero-logo-slot.drag-over {
+        transform: scale(1.07);
+      }
+
+      .hero-logos-divider {
+        width: 1px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.35);
+        flex-shrink: 0;
+      }
+
+      /* Standard Apple Glass Pill Badge (Vision & Footer) */
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.42rem 1.05rem 0.42rem 0.55rem;
+        border-radius: 9999px;
+        background: var(--glass-bg);
+        border: 1px solid rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(18px) saturate(190%);
+        -webkit-backdrop-filter: blur(18px) saturate(190%);
+        box-shadow:
+          0 10px 24px rgba(4, 38, 26, 0.22),
+          inset 0 1px 1px rgba(255, 255, 255, 0.55);
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--green-lime);
+        margin-bottom: 1.25rem;
+        cursor: pointer;
+        transition:
+          transform 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease),
+          border-color 0.35s var(--spring-ease);
+      }
+      .hero-badge:hover,
+      .hero-badge.drag-over {
+        transform: translateY(-2px) scale(1.03);
+        border-color: rgba(255, 255, 255, 0.85);
+        box-shadow:
+          0 14px 30px rgba(4, 38, 26, 0.32),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.9);
+      }
+
+      .cpc-logo-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 9999px;
+        flex-shrink: 0;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.24);
+      }
+
+      .footer-badges-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+      }
+
+      .hero-brand {
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--green-lime);
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 4.5vw, 3.35rem);
+        font-weight: 800;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.25rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+      }
+
+      .hero-subtitle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #d9f2c7;
+        margin-bottom: 1rem;
+      }
+
+      .hero-desc {
+        font-size: 0.98rem;
+        color: rgba(255, 255, 255, 0.88);
+        max-width: 36rem;
+        line-height: 1.7;
+        margin-bottom: 1.75rem;
+      }
+
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.9rem 1.55rem;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #b6e68e 0%, #96d166 100%);
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        color: var(--green-dark);
+        font-weight: 600;
+        font-size: 0.95rem;
+        box-shadow:
+          0 12px 26px rgba(0, 0, 0, 0.22),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.8);
+        transition:
+          transform 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease),
+          filter 0.35s var(--spring-ease);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow:
+          0 18px 34px rgba(0, 0, 0, 0.3),
+          inset 0 2px 1px rgba(255, 255, 255, 0.95);
+        filter: brightness(1.04);
+      }
+
+      .btn-outline-light {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.9rem 1.55rem;
+        border-radius: 1rem;
+        background: var(--glass-bg);
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        backdrop-filter: blur(18px) saturate(180%);
+        -webkit-backdrop-filter: blur(18px) saturate(180%);
+        box-shadow:
+          0 10px 24px rgba(4, 38, 26, 0.2),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.52);
+        transition:
+          transform 0.35s var(--spring-ease),
+          background 0.35s var(--spring-ease),
+          border-color 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease);
+      }
+      .btn-outline-light:hover {
+        background: rgba(255, 255, 255, 0.24);
+        border-color: rgba(255, 255, 255, 0.78);
+        transform: translateY(-3px) scale(1.03);
+        box-shadow:
+          0 16px 32px rgba(4, 38, 26, 0.32),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.85);
+      }
+
+      .hero-badges-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+      }
+      .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        padding: 0.45rem 0.9rem;
+        border-radius: 0.85rem;
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        box-shadow:
+          0 8px 20px rgba(4, 38, 26, 0.18),
+          inset 0 1px 1px rgba(255, 255, 255, 0.48);
+        font-size: 0.78rem;
+        font-weight: 500;
+        transition:
+          transform 0.35s var(--spring-ease),
+          border-color 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease);
+      }
+      .hero-pill:hover {
+        transform: translateY(-3px) scale(1.04);
+        border-color: rgba(255, 255, 255, 0.75);
+        box-shadow:
+          0 12px 26px rgba(4, 38, 26, 0.28),
+          inset 0 1px 1px rgba(255, 255, 255, 0.8);
+      }
+
+      .hero-visual-wrap {
+        position: relative;
+        max-width: 34rem;
+        margin: 0 auto;
+        width: 100%;
+      }
+      @media (min-width: 1024px) {
+        .hero-visual-wrap {
+          max-width: none;
+        }
+      }
+
+      /* Apple Glass Frame around Hero Image */
+      .hero-image-card {
+        position: relative;
+        border-radius: 1.75rem;
+        overflow: hidden;
+        padding: 0.5rem;
+        background: var(--glass-bg);
+        backdrop-filter: blur(22px) saturate(190%);
+        -webkit-backdrop-filter: blur(22px) saturate(190%);
+        border: 1.5px solid rgba(255, 255, 255, 0.45);
+        box-shadow:
+          0 28px 56px rgba(4, 38, 26, 0.36),
+          inset 0 2px 2px rgba(255, 255, 255, 0.65);
+        transition:
+          transform 0.45s var(--spring-ease),
+          box-shadow 0.45s var(--spring-ease),
+          border-color 0.45s var(--spring-ease);
+      }
+      .hero-image-card:hover {
+        transform: translateY(-6px) scale(1.015);
+        border-color: rgba(255, 255, 255, 0.8);
+        box-shadow:
+          0 36px 68px rgba(4, 38, 26, 0.46),
+          inset 0 2px 3px rgba(255, 255, 255, 0.9);
+      }
+      .hero-image-inner {
+        position: relative;
+        border-radius: 1.35rem;
+        overflow: hidden;
+      }
+      .hero-image-card img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        transition: transform 0.65s var(--spring-ease);
+      }
+      .hero-image-card:hover img {
+        transform: scale(1.04);
+      }
+      @media (min-width: 1024px) {
+        .hero-image-card img {
+          height: 440px;
+        }
+      }
+
+      .hero-image-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(6, 78, 54, 0.82),
+          transparent 55%
+        );
+      }
+      .hero-image-overlay {
+        position: absolute;
+        bottom: 1.1rem;
+        left: 1.1rem;
+        right: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.1rem;
+        border-radius: 1.15rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.28) 0%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        backdrop-filter: blur(20px) saturate(190%);
+        -webkit-backdrop-filter: blur(20px) saturate(190%);
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        box-shadow:
+          0 12px 28px rgba(0, 0, 0, 0.22),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.65);
+        transition:
+          transform 0.35s var(--spring-ease),
+          border-color 0.35s var(--spring-ease);
+      }
+      .hero-image-card:hover .hero-image-overlay {
+        transform: translateY(-3px);
+        border-color: rgba(255, 255, 255, 0.78);
+      }
+      .hero-overlay-tag {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--green-lime);
+        font-weight: 600;
+      }
+      .hero-overlay-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-top: 0.15rem;
+      }
+      .hero-overlay-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.85rem;
+        background: var(--green-lime);
+        color: var(--green-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+        transition: transform 0.45s var(--spring-ease);
+      }
+      .hero-image-card:hover .hero-overlay-icon {
+        transform: rotate(90deg) scale(1.06);
+      }
+
+      /* Floating Apple Glass Badge */
+      .floating-eco-card {
+        display: none;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.8rem 1.1rem;
+        border-radius: 1.15rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.88) 0%,
+          rgba(240, 250, 243, 0.74) 100%
+        );
+        backdrop-filter: blur(20px) saturate(190%);
+        -webkit-backdrop-filter: blur(20px) saturate(190%);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        color: var(--green-dark);
+        box-shadow:
+          0 20px 38px rgba(4, 38, 26, 0.25),
+          inset 0 1.5px 1px rgba(255, 255, 255, 1);
+        position: absolute;
+        top: -1.25rem;
+        left: -1.25rem;
+        z-index: 3;
+        animation: gentleBob 4.8s ease-in-out infinite;
+        transition:
+          transform 0.35s var(--spring-ease),
+          box-shadow 0.35s var(--spring-ease);
+      }
+      .floating-eco-card:hover {
+        animation-play-state: paused;
+        transform: translateY(-5px) scale(1.05);
+        box-shadow:
+          0 26px 46px rgba(4, 38, 26, 0.32),
+          inset 0 2px 2px rgba(255, 255, 255, 1);
+      }
+      @media (min-width: 640px) {
+        .floating-eco-card {
+          display: flex;
+        }
+      }
+      .floating-eco-icon {
+        width: 2.35rem;
+        height: 2.35rem;
+        border-radius: 0.8rem;
+        background: linear-gradient(135deg, #dcf5e3, #bfecc9);
+        color: var(--green-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      }
+
+      /* ========================================================================
+7. PROCESS SECTION (DEDICATED 1-PAGE SPACE BETWEEN HOME & TEAM — STEPS 1 TO 7)
+         ======================================================================== */
+      .process-section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--bg-page);
+      }
+
+      .process-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1.5rem;
+        position: relative;
+      }
+
+      .process-card {
+        width: 100%;
+        max-width: 380px;
+        padding: 1.15rem 1.15rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        position: relative;
+        cursor: pointer;
+      }
+      @media (min-width: 640px) {
+        .process-card {
+          width: calc(50% - 0.75rem);
+          max-width: none;
+        }
+      }
+      @media (min-width: 1024px) {
+        .process-card {
+          width: calc(25% - 1.125rem);
+        }
+      }
+
+      .process-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: var(--green-bright);
+        box-shadow:
+          0 22px 44px rgba(22, 128, 60, 0.2),
+          inset 0 2px 2px rgba(255, 255, 255, 0.95);
+      }
+      body.dark .process-card:hover {
+        border-color: var(--green-lime);
+        box-shadow:
+          0 22px 44px rgba(0, 0, 0, 0.55),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.35);
+      }
+
+      .process-photo-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 1.1rem;
+        overflow: hidden;
+        margin-bottom: 1.15rem;
+        background: linear-gradient(
+          135deg,
+          rgba(22, 128, 60, 0.15),
+          rgba(163, 217, 119, 0.22)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.45);
+      }
+
+      .process-photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s var(--spring-ease);
+      }
+
+      .process-card:hover .process-photo-wrap img {
+        transform: scale(1.07);
+      }
+
+      .process-photo-fallback {
+        display: none;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: var(--green-primary);
+      }
+      body.dark .process-photo-fallback {
+        color: var(--green-lime);
+      }
+
+      .process-step-badge {
+        position: absolute;
+        top: 0.65rem;
+        left: 0.65rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.34rem 0.78rem;
+        border-radius: 9999px;
+        font-family: var(--font-display);
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        background: rgba(5, 68, 47, 0.84);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        color: var(--green-lime);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      }
+
+      .process-zoom-badge {
+        position: absolute;
+        bottom: 0.6rem;
+        right: 0.6rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.65rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: var(--green-dark);
+        opacity: 0.85;
+        transition:
+          transform 0.3s var(--spring-ease),
+          opacity 0.3s var(--spring-ease);
+      }
+      .process-card:hover .process-zoom-badge {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      .process-card-title {
+        font-size: 1.08rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+
+      .process-card-desc {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.62;
+        margin-bottom: 1.1rem;
+      }
+
+      .process-card-tag {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.76rem;
+        font-weight: 600;
+        color: var(--green-primary);
+      }
+      body.dark .process-card-tag {
+        color: var(--green-lime);
+      }
+
+      /* Process Lightbox Modal */
+      .lightbox-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+        background: rgba(4, 24, 16, 0.78);
+        backdrop-filter: blur(18px) saturate(160%);
+        -webkit-backdrop-filter: blur(18px) saturate(160%);
+      }
+      .lightbox-backdrop.open {
+        display: flex;
+      }
+      .lightbox-dialog {
+        position: relative;
+        width: 100%;
+        max-width: 760px;
+        border-radius: 1.75rem;
+        padding: 1.25rem;
+        background: var(--glass-card-bg);
+        border: 1.5px solid rgba(255, 255, 255, 0.45);
+        box-shadow: 0 32px 64px rgba(0, 0, 0, 0.45);
+        color: var(--text-main);
+      }
+      .lightbox-img-box {
+        width: 100%;
+        max-height: 60vh;
+        border-radius: 1.25rem;
+        overflow: hidden;
+        background: #08120d;
+        margin-bottom: 1.15rem;
+      }
+      .lightbox-img-box img {
+        width: 100%;
+        max-height: 60vh;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+      .lightbox-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .lightbox-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .lightbox-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.55rem 0.95rem;
+        border-radius: 0.85rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+        background: rgba(22, 128, 60, 0.14);
+        border: 1px solid var(--border-card);
+        color: var(--text-main);
+        transition: all 0.25s var(--spring-ease);
+      }
+      .lightbox-btn:hover {
+        background: var(--green-primary);
+        color: #ffffff;
+      }
+
+      /* ========================================================================
+8. OUR TEAM SECTION (ADVISOR + APPLE GLASS CARDS + HOVER & SCROLL ANIMATIONS)
+         ======================================================================== */
+      .card {
+        background: var(--glass-card-bg);
+        backdrop-filter: blur(20px) saturate(185%);
+        -webkit-backdrop-filter: blur(20px) saturate(185%);
+        border: 1.5px solid var(--border-card);
+        border-radius: 1.65rem;
+        box-shadow: var(--glass-specular);
+        transition:
+          transform 0.4s var(--spring-ease),
+          box-shadow 0.4s var(--spring-ease),
+          border-color 0.4s var(--spring-ease),
+          background 0.4s var(--spring-ease);
+      }
+
+      /* Featured Project Advisor Row */
+      .advisor-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2.25rem;
+      }
+
+      .team-card.is-advisor {
+        width: 100%;
+        max-width: 340px;
+        border-color: rgba(202, 152, 42, 0.42);
+      }
+      body.dark .team-card.is-advisor {
+        border-color: rgba(235, 195, 92, 0.42);
+      }
+
+      .team-card.is-advisor .avatar-ring {
+        width: 8rem;
+        height: 8rem;
+        background: linear-gradient(
+          135deg,
+          #b8861e,
+          #e3b94f,
+          var(--green-primary)
+        );
+        box-shadow: 0 12px 26px rgba(184, 134, 30, 0.28);
+      }
+
+      .team-card.is-advisor:hover {
+        border-color: #d4a638;
+        box-shadow:
+          0 24px 48px rgba(184, 134, 30, 0.22),
+          inset 0 2px 2px rgba(255, 255, 255, 0.95);
+      }
+      body.dark .team-card.is-advisor:hover {
+        border-color: #ebc35c;
+        box-shadow:
+          0 24px 48px rgba(0, 0, 0, 0.6),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.35);
+      }
+
+      .team-badge.advisor-badge {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 166, 56, 0.2),
+          rgba(22, 128, 60, 0.14)
+        );
+        border: 1px solid rgba(202, 152, 42, 0.45);
+        color: #8f640d;
+      }
+      body.dark .team-badge.advisor-badge {
+        background: linear-gradient(
+          135deg,
+          rgba(235, 195, 92, 0.22),
+          rgba(163, 217, 119, 0.14)
+        );
+        border-color: rgba(235, 195, 92, 0.45);
+        color: #f3d27a;
+      }
+
+      .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1.5rem;
+      }
+
+      .team-card {
+        width: 100%;
+        max-width: 360px;
+        padding: 1.85rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      @media (min-width: 640px) {
+        .team-card:not(.is-advisor) {
+          width: calc(50% - 0.75rem);
+          max-width: none;
+        }
+      }
+      @media (min-width: 1024px) {
+        .team-card:not(.is-advisor) {
+          width: calc(25% - 1.125rem);
+        }
+      }
+
+      /* Hover effect applied consistently across team member boxes */
+      .team-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: var(--green-bright);
+        box-shadow:
+          0 22px 44px rgba(22, 128, 60, 0.2),
+          inset 0 2px 2px rgba(255, 255, 255, 0.95);
+      }
+      body.dark .team-card:hover {
+        border-color: var(--green-lime);
+        box-shadow:
+          0 22px 44px rgba(0, 0, 0, 0.55),
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.35);
+      }
+
+      .team-card.is-developer {
+        cursor: pointer;
+      }
+
+      .avatar-wrap {
+        position: relative;
+        margin-bottom: 1.25rem;
+      }
+      .avatar-ring {
+        width: 7.25rem;
+        height: 7.25rem;
+        border-radius: 9999px;
+        background: linear-gradient(
+          135deg,
+          var(--green-dark),
+          var(--green-primary),
+          var(--green-bright)
+        );
+        padding: 4px;
+        box-shadow: 0 10px 22px rgba(22, 128, 60, 0.22);
+        transition:
+          transform 0.45s var(--spring-ease),
+          box-shadow 0.45s var(--spring-ease);
+      }
+      .team-card:hover .avatar-ring {
+        transform: scale(1.07) rotate(3deg);
+        box-shadow: 0 14px 28px rgba(22, 128, 60, 0.32);
+      }
+      .avatar-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+        background: var(--team-avatar-bg);
+        color: var(--green-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+      body.dark .avatar-inner {
+        color: var(--green-lime);
+      }
+      .avatar-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 9999px;
+      }
+
+      .team-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.5rem;
+        padding: 0.32rem 0.82rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: transform 0.3s var(--spring-ease);
+      }
+      .team-card:hover .team-badge {
+        transform: scale(1.04);
+      }
+      .team-badge.leader-badge {
+        background: rgba(22, 128, 60, 0.14);
+        border: 1px solid rgba(22, 128, 60, 0.25);
+        color: var(--green-primary);
+      }
+      body.dark .team-badge.leader-badge {
+        background: rgba(163, 217, 119, 0.18);
+        border-color: rgba(163, 217, 119, 0.3);
+        color: var(--green-lime);
+      }
+      .team-badge.dev-badge {
+        background: var(--green-primary);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #ffffff;
+      }
+      body.dark .team-badge.dev-badge {
+        background: var(--green-lime);
+        color: var(--green-dark);
+      }
+
+      .team-simple-role {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-top: 0.35rem;
+      }
+
+      .portfolio-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-top: auto;
+        padding-top: 0.85rem;
+        font-size: 0.76rem;
+        font-weight: 600;
+        color: var(--green-primary);
+        transition: transform 0.3s var(--spring-ease);
+      }
+      .team-card.is-developer:hover .portfolio-hint {
+        transform: translateX(3px);
+      }
+      body.dark .portfolio-hint {
+        color: var(--green-lime);
+      }
+
+      /* ========================================================================
+9. CONCLUSION / VISION SECTION (ANIMATED AURORA + BANANA TREE & CASSAVA)
+         ======================================================================== */
+      .conclusion {
+        position: relative;
+        padding: 5.5rem 0;
+        overflow: hidden;
+        background: linear-gradient(
+          -45deg,
+          #043927,
+          #064e36,
+          #0e6739,
+          #16803c,
+          #0a5831
+        );
+        background-size: 320% 320%;
+        animation: bgAuroraShift 14s ease infinite;
+        color: #ffffff;
+        text-align: center;
+      }
+      .conclusion-inner {
+        position: relative;
+        max-width: 52rem;
+        margin: 0 auto;
+      }
+      .conclusion h2 {
+        font-size: clamp(1.75rem, 3.8vw, 2.85rem);
+        font-weight: 800;
+        line-height: 1.18;
+        margin: 1.25rem 0;
+      }
+      .conclusion p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 44rem;
+        margin: 0 auto 2.25rem;
+        line-height: 1.7;
+      }
+      .conclusion .btn-group {
+        justify-content: center;
+        margin-bottom: 0;
+      }
+
+      /* ========================================================================
+10. FOOTER & CONTACT
+         ======================================================================== */
+      .footer {
+        position: relative;
+        overflow: hidden;
+        padding: 4rem 0 2.5rem;
+        background: var(--footer-bg);
+        border-top: 1px solid var(--footer-border);
+        color: var(--footer-text);
+      }
+      .footer-thanks {
+        text-align: center;
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .footer-thanks h2 {
+        font-size: clamp(1.75rem, 3vw, 2.35rem);
+        font-weight: 800;
+        color: #ffffff;
+        margin-top: 1rem;
+      }
+      .footer-thanks h2 span {
+        color: var(--green-lime);
+      }
+      .footer-tagline {
+        color: var(--green-lime);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-top: 0.4rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+        padding-bottom: 2.5rem;
+      }
+      @media (min-width: 768px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: 5fr 3fr 4fr;
+        }
+      }
+
+      .footer-col-title {
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #ffffff;
+        margin-bottom: 1rem;
+      }
+      .footer-nav-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+        font-size: 0.88rem;
+      }
+      .footer-link {
+        color: rgba(255, 255, 255, 0.78);
+        text-align: left;
+        transition:
+          color 0.25s var(--spring-ease),
+          transform 0.25s var(--spring-ease);
+      }
+      .footer-link:hover {
+        color: var(--green-lime);
+        transform: translateX(4px);
+      }
+
+      .footer-details li {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.82);
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.5rem 0.85rem;
+        border-radius: 0.85rem;
+        background: var(--glass-bg);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        font-size: 0.86rem;
+        font-weight: 500;
+        transition:
+          transform 0.35s var(--spring-ease),
+          background 0.35s var(--spring-ease),
+          border-color 0.35s var(--spring-ease),
+          color 0.35s var(--spring-ease);
+      }
+      .contact-link:hover {
+        background: rgba(163, 217, 119, 0.2);
+        border-color: var(--green-lime);
+        color: var(--green-lime);
+        transform: translateY(-2px) scale(1.03);
+      }
+
+      .footer-bottom {
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+      @media (min-width: 640px) {
+        .footer-bottom {
+          flex-direction: row;
+        }
+      }
+
+      /* Back to Top Apple Glass Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 40;
+        padding: 0.85rem;
+        border-radius: 1.1rem;
+        background: rgba(22, 128, 60, 0.85);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        color: #ffffff;
+        box-shadow:
+          0 14px 28px rgba(6, 78, 54, 0.38),
+          inset 0 1px 1px rgba(255, 255, 255, 0.55);
+        display: none;
+        transition:
+          transform 0.35s var(--spring-ease),
+          background 0.35s var(--spring-ease);
+      }
+      .back-to-top.show {
+        display: inline-flex;
+      }
+      .back-to-top:hover {
+        background: var(--green-bright);
+        transform: translateY(-4px) scale(1.06);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- STICKY APPLE GLASS HEADER -->
+    <header id="navbar" class="navbar">
+      <div class="container">
+        <div class="navbar-inner">
+          <button
+            class="brand-btn"
+            onclick="scrollToSection('hero')"
+            aria-label="GlyChek Home"
+          >
+            <span
+              id="navLogo"
+              style="display: inline-flex; flex-shrink: 0"
+            ></span>
+            <div>
+              <span class="brand-name">GlyChek</span>
+              <span class="brand-sub">Cambodia</span>
+            </div>
+          </button>
+
+          <nav id="desktopNav" class="nav-desktop" aria-label="Primary"></nav>
+
+          <div class="nav-controls">
+            <button
+              id="langToggle"
+              class="ctrl-btn glass-sheen"
+              title="Switch English / Khmer"
+            >
+              <i
+                data-lucide="globe"
+                style="width: 14px; height: 14px; color: #35b85a"
+              ></i>
+              <span id="langLabel">ខ្មែរ</span>
+            </button>
+
+            <button
+              id="themeToggle"
+              class="ctrl-btn icon-only glass-sheen"
+              aria-label="Toggle Theme"
+            >
+              <i data-lucide="moon" style="width: 16px; height: 16px"></i>
+            </button>
+
+            <button
+              id="mobileMenuBtn"
+              class="ctrl-btn icon-only mobile-menu-toggle"
+              aria-label="Toggle Menu"
+            >
+              <i data-lucide="menu" style="width: 18px; height: 18px"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobileDrawer" class="mobile-drawer">
+        <div id="mobileNavGrid" class="mobile-drawer-grid"></div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT (HOME + PROCESS + TEAM + VISION) -->
+    <main id="appMain"></main>
+
+    <!-- PROCESS STEP LIGHTBOX MODAL -->
+    <div
+      id="stepLightbox"
+      class="lightbox-backdrop"
+      onclick="if (event.target === this) closeStepLightbox();"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="lightbox-dialog">
+        <div class="lightbox-img-box" id="lightboxMedia"></div>
+        <div class="lightbox-footer">
+          <div>
+            <p
+              id="lightboxStepLabel"
+              style="
+                font-size: 0.78rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: var(--green-primary);
+              "
+            ></p>
+            <h3
+              id="lightboxTitle"
+              style="font-size: 1.15rem; font-weight: 700; margin-top: 0.15rem"
+            ></h3>
+            <p
+              id="lightboxDesc"
+              style="
+                font-size: 0.88rem;
+                color: var(--text-muted);
+                margin-top: 0.25rem;
+              "
+            ></p>
+          </div>
+          <div class="lightbox-nav">
+            <button
+              class="lightbox-btn"
+              onclick="navigateStepLightbox(-1)"
+              aria-label="Previous Step"
+            >
+              <i
+                data-lucide="chevron-left"
+                style="width: 16px; height: 16px"
+              ></i>
+            </button>
+            <button
+              class="lightbox-btn"
+              onclick="navigateStepLightbox(1)"
+              aria-label="Next Step"
+            >
+              <i
+                data-lucide="chevron-right"
+                style="width: 16px; height: 16px"
+              ></i>
+            </button>
+            <button
+              class="lightbox-btn"
+              onclick="closeStepLightbox()"
+              aria-label="Close"
+            >
+              <i data-lucide="x" style="width: 16px; height: 16px"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER & CONTACT -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- BACK TO TOP -->
+    <button
+      id="backToTop"
+      class="back-to-top glass-sheen"
+      onclick="scrollToSection('hero')"
+      aria-label="Back to top"
+    >
+      <i data-lucide="arrow-up" style="width: 20px; height: 20px"></i>
+    </button>
+
+    <script>
+      const CONTENT = {
+        en: {
+          brand: "GlyChek",
+          heroTitle: "ECO-BANANA STEM CASSAVA PACKAGING",
+          heroSubtitle: "Turning Waste Into Energy | Cambodia",
+          heroDesc:
+            "Pioneering biodegradable food packaging crafted from upcycled Cambodian banana stem fibers and natural cassava starch—designed to replace single-use plastics and protect our ecosystems.",
+          ctaExplore: "Explore Process",
+          ctaLearn: "Meet Our Team",
+          heroBadges: [
+            "100% Biodegradable",
+            "Agricultural Waste Upcycled",
+            "Plastic-Free",
+          ],
+          nav: [
+            { id: "hero", label: "Home" },
+            { id: "process", label: "Process" },
+            { id: "team", label: "Team" },
+            { id: "conclusion", label: "Vision" },
+            { id: "footer", label: "Contact" },
+          ],
+          process: {
+            eyebrow: "7-Step Production Workflow",
+            title: "Our Eco-Packaging Process",
+            subtitle:
+              "Explore the seven-step practical experimental stages of turning bananas and cassava flour into naturally rotated packaging boxes.",
+            steps: [
+              {
+                num: "Step 01",
+                file: "step1",
+                icon: "scissors",
+                title: "Washing & Cutting Banana Stems",
+                desc: "Wash and slice the harvested banana stems into small pieces.",
+                tag: "Raw Material Prep",
+              },
+              {
+                num: "Step 02",
+                file: "step2",
+                icon: "flame",
+                title: "Boiling Banana Stems to Soften",
+                desc: "Boil the sliced banana stem pieces in a pot to soften the fibers and make them easy to separate.",
+                tag: "Thermal Softening",
+              },
+              {
+                num: "Step 03",
+                file: "step3",
+                icon: "blender",
+                fallbackIcon: "refresh-cw",
+                title: "Blending & Separating Fibers",
+                desc: "Blend the softened boiled banana stems in a blender until finely ground.",
+                tag: "Fine Blending",
+              },
+              {
+                num: "Step 04",
+                file: "step4",
+                icon: "droplets",
+                title: "Filtering & Extracting Fibers",
+                desc: "Strain and squeeze out the excess water to extract clean banana stem fibers.",
+                tag: "Fiber Extraction",
+              },
+              {
+                num: "Step 05",
+                file: "step5",
+                icon: "layers",
+                title: "Mixing with Cassava Starch",
+                desc: "Add banana stem fibers, cassava starch, and natural binders into a mixer and blend until all ingredients are evenly combined.",
+                tag: "Ingredient Blending",
+              },
+              {
+                num: "Step 06",
+                file: "step6",
+                icon: "cooking-pot",
+                fallbackIcon: "flame",
+                title: "Stirring & Cooking the Mixture",
+                desc: "Stir and cook the banana stem fiber and cassava starch mixture over heat in a pan until it thickens and becomes moldable.",
+                tag: "Thermal Cooking",
+              },
+              {
+                num: "Step 07",
+                file: "step7",
+                icon: "package-check",
+                title: "Molding & Drying",
+                desc: "Press the mixture into molds and arrange them on trays to dry into sturdy biodegradable packaging bowls.",
+                tag: "100% Biodegradable",
+              },
+            ],
+          },
+          team: {
+            eyebrow: "Our Team",
+            title: "GlyChek",
+            subtitle:
+              "A dedicated Cambodian student innovation team committed to transforming local agricultural waste into sustainable packaging solutions.",
+            advisorLabel: "Project Advisor • KSIT",
+            leaderLabel: "Team Leader • KSIT (GlyChek)",
+            memberLabel: "Team Member • KSIT (GlyChek)",
+            devLabel: "Website Developer • KSIT",
+            portfolioHint: "Look at my other work",
+            advisor: {
+              name: "Eav Chenda",
+              file: "chenda",
+            },
+            members: [
+              {
+                name: "Thon Pola",
+                photo: "image/pola.png",
+                type: "leader",
+              },
+              {
+                name: "Phy Rathanak Heng",
+                photo: "image/heng.jpg",
+                type: "simple",
+              },
+              {
+                name: "Om SaoReaksa",
+                photo: "image/reaksa.png",
+                type: "simple",
+              },
+              {
+                name: "Kim Sobun",
+                photo: "image/sobon.jpg",
+                type: "simple",
+              },
+              {
+                name: "Hak ChhengTaing",
+                photo:
+                  "https://lh3.googleusercontent.com/aida-public/AB6AXuC75ZYpaLkpc7Um5mqFGPl_wYG0ZqZ8e47oZrCEKNw-4BjoOTiz4JoyNWngKhAzYJnDel04XWnfnHpmcpu3eXygf0lvhbbqgUGx0-TObNFCR_fNhVmL0mFsisw9uQKSj_8C2m7aRd7v6r1FjoOkuWlT3MdgOLqrF9spAFXHmjkfEy6IozBkRP2Gdkk0-L195atuSHqoNx-QSemVAjE4nzyVYEZp0BcBUpAq5H08dCT_jEUvEJlULmXSvQ",
+                type: "developer",
+                portfolioUrl: "https://chengtang-portfolio.vercel.app/",
+              },
+            ],
+          },
+          conclusion: {
+            eyebrow: "Our team perspective",
+            title: "Building a Plastic-Free, Sustainable Future for Cambodia",
+            desc: "GlyChek demonstrates that the solution to plastic pollution can grow right in our own fields. By transforming banana stem waste and cassava starch into biodegradable packaging, we take a practical step toward cleaner environments, stronger circular agriculture, and a greener future for generations to come.",
+            ctaPrimary: "Back to Home",
+            ctaSecondary: "Meet Our Team",
+          },
+          footer: {
+            thankYou: "Thank You",
+            thankYouKm: "សូមអរគុណ",
+            tagline: "Turning Waste Into Energy | Cambodia",
+            desc: "Eco-Banana Stem Cassava Packaging — an environmental innovation project developed with Cambodia Packaging Center (CPC).",
+            navTitle: "Quick Navigation",
+            contactTitle: "Contact Us",
+            institute: "Kampong Speu Institute of Technology (KSIT)",
+            cafst:
+              "Cambodian Association of Food Science and Technology (CAFST)",
+            event: "Cambodia Packaging Center (CPC)",
+            telegramText: "Leader Team",
+            telegramUrl: "https://t.me/pola455",
+            phoneText: "+855 88 44 50 898",
+            phoneHref: "tel:+855884450898",
+            copyright: "© 2026 GlyChek Project Team. All rights reserved.",
+          },
+        },
+        km: {
+          brand: "GlyChek",
+          heroTitle: "ការវេចខ្ចប់អេកូពីដើមចេក និងម្សៅដំឡូងមី",
+          heroSubtitle: "ប្រែក្លាយកាកសំណល់ទៅជាថាមពល | កម្ពុជា",
+          heroDesc:
+            "ការវេចខ្ចប់អាហារដែលអាចរលួយតាមធម្មជាតិ ផលិតពីសរសៃដើមចេកដែលជាកាកសំណល់កសិកម្ម និងម្សៅដំឡូងមីធម្មជាតិនៅកម្ពុជា ដើម្បីជំនួសប្លាស្ទិកប្រើតែម្តង និងការពារបរិស្ថាន។",
+          ctaExplore: "ដំណើរការផលិត",
+          ctaLearn: "ស្គាល់ក្រុមស្រាវជ្រាវ",
+          heroBadges: [
+            "រលួយតាមធម្មជាតិ ១០០%",
+            "កែច្នៃកាកសំណល់កសិកម្ម",
+            "គ្មានសារធាតុប្លាស្ទិក",
+          ],
+          nav: [
+            { id: "hero", label: "ទំព័រដើម" },
+            { id: "process", label: "ដំណើរការផលិត" },
+            { id: "team", label: "ក្រុមស្រាវជ្រាវ" },
+            { id: "conclusion", label: "ទស្សនវិស័យ" },
+            { id: "footer", label: "ទំនាក់ទំនង" },
+          ],
+          process: {
+            eyebrow: "ដំណើរការផលិតទាំង ៧ ដំណាក់កាល",
+            title: "ដំណើរការផលិតវេចខ្ចប់អេកូ",
+            subtitle:
+              "ស្វែងយល់ពីដំណាក់កាលពិសោធន៍ជាក់ស្តែងទាំង ៧ ជំហាន ក្នុងការប្រែក្លាយដើមចេក និងម្សៅដំឡូងមី ទៅជាប្រអប់វេចខ្ចប់ដែលរលួយតាមធម្មជាតិ ",
+            steps: [
+              {
+                num: "ជំហានទី ០១",
+                file: "step1",
+                icon: "scissors",
+                title: "ការហាន់ដើមចេក",
+                desc: "លាងសម្អាតហើយហាន់ដើមចេកដែលប្រមូលបាន ទៅជាចំណិតតូចៗ ",
+                tag: "ការរៀបចំវត្ថុធាតុដើម",
+              },
+              {
+                num: "ជំហានទី ០២",
+                file: "step2",
+                icon: "flame",
+                title: "ការស្ងោរដើមចេកឱ្យទន់",
+                desc: "យកចំណិតដើមចេកទៅស្ងោរក្នុងឆ្នាំង ដើម្បីឱ្យសាច់ដើមចេកទន់ និងងាយស្រួលបំបែកសរសៃ។",
+                tag: "ការស្ងោរដោយកម្តៅ",
+              },
+              {
+                num: "ជំហានទី ០៣",
+                file: "step3",
+                icon: "refresh-cw",
+                title: "ការកិនបំបែកសរសៃ",
+                desc: "យកដើមចេកដែលស្ងោរទន់រួច ទៅកិនក្នុងម៉ាស៊ីនក្រឡុកឱ្យម៉ដ្ឋ",
+                tag: "ការកិនឱ្យម៉ដ្ឋ",
+              },
+              {
+                num: "ជំហានទី ០៤",
+                file: "step4",
+                icon: "droplets",
+                title: "ការច្រោះ និងពូតយកសរសៃ",
+                desc: "ច្រោះ យកទឹកចេញ",
+                tag: "ការញែកយកសរសៃ",
+              },
+              {
+                num: "ជំហានទី ០៥",
+                file: "step5",
+                icon: "layers",
+                title: "ការលាយជាមួយម្សៅដំឡូងមី",
+                desc: "បញ្ចូលសរសៃដើមចេក ម្សៅដំឡូងមី និងសារធាតុផ្សំធម្មជាតិទៅក្នុងម៉ាស៊ីនលាយ រួចលាយរហូតដល់សារធាតុទាំងអស់ចូលគ្នាស្មើល្អ។",
+                tag: "ការលាយសារធាតុផ្សំ",
+              },
+              {
+                num: "ជំហានទី ០៦",
+                file: "step6",
+                icon: "flame",
+                title: "ការកូរ និងចម្អិនល្បាយ",
+                desc: "យកល្បាយសរសៃដើមចេក និងម្សៅដំឡូងមីទៅកូរចម្អិនលើភ្លើងក្នុងខ្ទះ រហូតដល់ឡើងស្អិត និងអាចពូនជារូបរាងបាន។",
+                tag: "ការចម្អិនដោយកម្តៅ",
+              },
+              {
+                num: "ជំហានទី ០៧",
+                file: "step7",
+                icon: "package-check",
+                title: "ការចាក់ពុម្ព និងសម្ងួត",
+                desc: "យកល្បាយចាក់ពុម្ព និងតម្រៀបលើថាសដើម្បីសម្ងួតឱ្យក្លាយជាចានសំបកវេចខ្ចប់។",
+                tag: "រលួយតាមធម្មជាតិ ១០០%",
+              },
+            ],
+          },
+          team: {
+            eyebrow: "ក្រុមស្រាវជ្រាវរបស់យើង",
+            title: "GlyChek",
+            subtitle:
+              "ក្រុមនិស្សិតវិទ្យាស្ថានបច្ចេកវិទ្យាកំពង់ស្ពឺមានការប្តេជ្ញាចិត្តក្នុងការប្រែក្លាយកាកសំណល់កសិកម្មក្នុងស្រុកទៅជាដំណោះស្រាយវេចខ្ចប់ប្រកបដោយនិរន្តរភាព។",
+            advisorLabel: "គ្រូដឹកនាំគម្រោង • KSIT",
+            leaderLabel: "ប្រធានក្រុម (Team Leader) • KSIT",
+            memberLabel: "សមាជិកក្រុម • KSIT (GlyChek)",
+            devLabel: "អ្នកអភិវឌ្ឍន៍គេហទំព័រ • KSIT",
+            portfolioHint: "មើលការងារផ្សេងទៀតរបស់ខ្ញុំ",
+            advisor: {
+              name: "អ៊ាវ ចិន្តា (Eav Chenda)",
+              file: "chenda",
+            },
+            members: [
+              {
+                name: "ថន ប៉ូឡា (Thon Pola)",
+                photo: "image/pola.png",
+                type: "leader",
+              },
+              {
+                name: "ភីរតនៈ ហេង (Phyrathanak Heng)",
+                photo: "image/heng.jpg",
+                type: "simple",
+              },
+              {
+                name: "ឱម សៅរក្សា (Om SaoReaksa)",
+                photo: "image/reaksa.png",
+                type: "simple",
+              },
+              {
+                name: "គឹម សុបុណ្យ (Kim Sobun)",
+                photo: "image/sobon.jpg",
+                type: "simple",
+              },
+              {
+                name: "ហាក់ ឆេងតាំង (Hak ChhengTaing)",
+                photo:
+                  "https://lh3.googleusercontent.com/aida-public/AB6AXuC75ZYpaLkpc7Um5mqFGPl_wYG0ZqZ8e47oZrCEKNw-4BjoOTiz4JoyNWngKhAzYJnDel04XWnfnHpmcpu3eXygf0lvhbbqgUGx0-TObNFCR_fNhVmL0mFsisw9uQKSj_8C2m7aRd7v6r1FjoOkuWlT3MdgOLqrF9spAFXHmjkfEy6IozBkRP2Gdkk0-L195atuSHqoNx-QSemVAjE4nzyVYEZp0BcBUpAq5H08dCT_jEUvEJlULmXSvQ",
+                type: "developer",
+                portfolioUrl: "https://chengtang-portfolio.vercel.app/",
+              },
+            ],
+          },
+          conclusion: {
+            eyebrow: "ទស្សនវិស័យក្រុមរបស់យើង",
+            title: "រួមគ្នាកសាងអនាគតគ្មានប្លាស្ទិក សម្រាប់កម្ពុជា",
+            desc: "GlyChek បង្ហាញថាដំណោះស្រាយចំពោះការបំពុលប្លាស្ទិកអាចចាប់ផ្តើមពីធនធានធម្មជាតិរបស់យើងផ្ទាល់។ តាមរយៈការប្រែក្លាយដើមចេក និងម្សៅដំឡូងមីទៅជាការវេចខ្ចប់ Eco-friendly យើងបោះជំហានឆ្ពោះទៅរកបរិស្ថានស្អាត និងអនាគតប្រកបដោយចីរភាព។",
+            ctaPrimary: "ត្រឡប់ទៅទំព័រដើម",
+            ctaSecondary: "ក្រុមស្រាវជ្រាវ",
+          },
+          footer: {
+            thankYou: "សូមអរគុណ",
+            thankYouKm: "Thank You",
+            tagline: "Turning Waste Into Energy | Cambodia",
+            desc: "ការវេចខ្ចប់អេកូពីដើមចេក និងម្សៅដំឡូងមី — គម្រោងនវានុវត្តន៍បរិស្ថានជាមួយមជ្ឈមណ្ឌលអភិវឌ្ឍន៍ការវេចខ្ចប់កម្ពុជា (CPC)។",
+            navTitle: "តំណភ្ជាប់រហ័ស",
+            contactTitle: "ទំនាក់ទំនង",
+            institute: "វិទ្យាស្ថានបច្ចេកវិទ្យាកំពង់ស្ពឺ (វបកស)",
+            cafst: "សមាគមវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យាអាហារកម្ពុជា (CAFST)",
+            event: "មជ្ឈមណ្ឌលអភិវឌ្ឍន៍ការវេចខ្ចប់កម្ពុជា (CPC)",
+            telegramText: "ប្រធានក្រុម",
+            telegramUrl: "https://t.me/pola455",
+            phoneText: "+855 88 44 50 898",
+            phoneHref: "tel:+855884450898",
+            copyright: "© 2026 ក្រុមគម្រោង GlyChek។ រក្សាសិទ្ធិគ្រប់យ៉ាង។",
+          },
+        },
+      };
+
+      const HERO_IMG =
+        "image/baner.jpg"; /* Hero background image (banana plantation) */
+
+      /* Cache for white-background-removed banana tree & cassava PNG data URLs */
+      const cleanedBotanicalCache = {
+        "banana-tree": null,
+        cassava: null,
+      };
+
+      const state = {
+        lang: "en",
+        darkMode: false,
+        scrolled: false,
+        activeSection: "hero",
+        mobileMenuOpen: false,
+        customCpcLogo: null,
+        customCafstLogo: null,
+        customKsitLogo: null,
+        lightboxIndex: null,
+      };
+
+      function refreshIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+          window.lucide.createIcons();
+        }
+      }
+
+      /* Automatically strips white backgrounds from banana-tree.jpg & cassava.jpg */
+      function processBotanicalImg(imgEl, baseName) {
+        if (imgEl.dataset.cleaned === "true") return;
+
+        if (cleanedBotanicalCache[baseName]) {
+          imgEl.dataset.cleaned = "true";
+          imgEl.src = cleanedBotanicalCache[baseName];
+          return;
+        }
+
+        try {
+          const w = imgEl.naturalWidth;
+          const h = imgEl.naturalHeight;
+          if (!w || !h) return;
+
+          // Resize to max 900px on offscreen canvas for smooth performance
+          const scale = Math.min(1, 900 / Math.max(w, h));
+          const cw = Math.round(w * scale);
+          const ch = Math.round(h * scale);
+
+          const canvas = document.createElement("canvas");
+          canvas.width = cw;
+          canvas.height = ch;
+          const ctx = canvas.getContext("2d", { willReadFrequently: true });
+          ctx.drawImage(imgEl, 0, 0, cw, ch);
+
+          const imgData = ctx.getImageData(0, 0, cw, ch);
+          const data = imgData.data;
+
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+            const a = data[i + 3];
+            if (a === 0) continue;
+
+            const maxC = Math.max(r, g, b);
+            const minC = Math.min(r, g, b);
+            const lum = (r + g + b) / 3;
+            const sat = maxC - minC;
+
+            // Remove white backdrop & light neutral gray ground shadow cleanly
+            if (lum > 236 && sat < 22) {
+              data[i + 3] = 0;
+            } else if (lum > 198 && sat < 18) {
+              const t = (236 - lum) / (236 - 198);
+              data[i + 3] = Math.round(a * t * t);
+            }
+          }
+
+          ctx.putImageData(imgData, 0, 0);
+          const cleanUrl = canvas.toDataURL("image/png");
+          cleanedBotanicalCache[baseName] = cleanUrl;
+
+          document
+            .querySelectorAll(`img[data-botanical="${baseName}"]`)
+            .forEach((el) => {
+              el.dataset.cleaned = "true";
+              el.classList.remove("fallback-blend");
+              el.src = cleanUrl;
+            });
+        } catch (err) {
+          // Graceful CSS fallback if opened directly via file:// protocol
+          imgEl.classList.add("fallback-blend");
+        }
+      }
+
+      /* Smart fallback loader for banana-tree & cassava (.jpg -> .png -> .jpeg -> .webp) */
+      function handleBotanicalError(imgEl, baseName) {
+        const tried = parseInt(imgEl.getAttribute("data-tried") || "0", 10);
+        const exts = [".png", ".jpeg", ".webp"];
+        if (tried < exts.length) {
+          imgEl.setAttribute("data-tried", String(tried + 1));
+          imgEl.src = `image/${baseName}${exts[tried]}`;
+        } else {
+          imgEl.style.display = "none";
+        }
+      }
+
+      function renderBotanicalProp({
+        type,
+        wrapStyle,
+        parallax = 0.25,
+        rotate = 0.12,
+        flipped = false,
+        soft = false,
+        delay = "0s",
+      }) {
+        const baseName = type === "banana" ? "banana-tree" : "cassava";
+        const initialSrc =
+          cleanedBotanicalCache[baseName] || `image/${baseName}.jpg`;
+        const isAlreadyCleaned = Boolean(cleanedBotanicalCache[baseName]);
+        const cls = [
+          "botanical-item",
+          type === "banana" ? "botanical-banana" : "botanical-cassava",
+          flipped ? "flipped" : "",
+          soft ? "botanical-soft" : "",
+        ]
+          .filter(Boolean)
+          .join(" ");
+
+        return `
+          <div class="parallax-wrap" data-parallax="${parallax}" data-rotate="${rotate}" style="${wrapStyle}">
+            <div class="${cls}" style="animation-delay:${delay};">
+              <img
+                src="${initialSrc}"
+                alt=""
+                data-botanical="${baseName}"
+                data-cleaned="${isAlreadyCleaned ? "true" : "false"}"
+                onload="processBotanicalImg(this, '${baseName}')"
+                onerror="handleBotanicalError(this, '${baseName}')"
+              />
+            </div>
+          </div>
+        `;
+      }
+
+      /* Smart Image Loader with .jpg -> .png -> .jpeg -> .webp -> fallback icon */
+      function handleStepImgError(imgEl, baseName) {
+        const tried = parseInt(imgEl.getAttribute("data-tried") || "0", 10);
+        const exts = [".png", ".jpeg", ".webp"];
+        if (tried < exts.length) {
+          imgEl.setAttribute("data-tried", String(tried + 1));
+          imgEl.src = `image/${baseName}${exts[tried]}`;
+        } else {
+          imgEl.style.display = "none";
+          if (imgEl.nextElementSibling) {
+            imgEl.nextElementSibling.style.display = "flex";
+          }
+        }
+      }
+
+      function logoSVG(size = 64, centered = false) {
+        const marginStyle = centered ? "margin:0 auto;" : "";
+        return `
+          <img
+            src="image/glycheck.png"
+            width="${size}"
+            height="${size}"
+            alt="GlyChek logo"
+            style="width:${size}px;height:${size}px;flex-shrink:0;object-fit:contain;border-radius:50%;${marginStyle}"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"
+          />
+          <span
+            style="display:none;width:${size}px;height:${size}px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#16803c,#a3d977);align-items:center;justify-content:center;color:#064e36;font-weight:800;font-size:${Math.round(size * 0.42)}px;${marginStyle}"
+            aria-hidden="true"
+          >G</span>
+        `;
+      }
+
+      /* Cambodia Packaging Center (CPC) Logo Chip */
+      function cpcLogoSVG(size = 24) {
+        const src = state.customCpcLogo || "image/cpc.png";
+        const pad = Math.max(4, Math.round(size * 0.14));
+        const chipSize = size + pad * 2;
+        return `
+          <span class="cpc-logo-chip" style="width:${chipSize}px;height:${chipSize}px;padding:${pad}px;">
+            <img
+              src="${src}"
+              width="${size}"
+              height="${size}"
+              alt="Cambodia Packaging Center (CPC) logo"
+              style="width:100%;height:100%;object-fit:contain;border-radius:6px;"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"
+            />
+            <span style="display:none;align-items:center;justify-content:center;width:100%;height:100%;" aria-hidden="true">
+              <svg width="${Math.round(size * 0.85)}" height="${Math.round(size * 0.85)}" viewBox="0 0 24 24" fill="none">
+                <polygon points="12,2 17,5 12,8 7,5" fill="#06613e"/>
+                <polygon points="7,5 12,8 12,13 7,10" fill="#0a7a4f"/>
+                <polygon points="17,5 12,8 12,13 17,10" fill="#044b30"/>
+                <polygon points="6.5,11 11.5,14 6.5,17 1.5,14" fill="#06613e"/>
+                <polygon points="1.5,14 6.5,17 6.5,22 1.5,19" fill="#0a7a4f"/>
+                <polygon points="11.5,14 6.5,17 6.5,22 11.5,19" fill="#044b30"/>
+                <polygon points="17.5,11 22.5,14 17.5,17 12.5,14" fill="#06613e"/>
+                <polygon points="12.5,14 17.5,17 17.5,22 12.5,19" fill="#0a7a4f"/>
+                <polygon points="22.5,14 17.5,17 17.5,22 22.5,19" fill="#044b30"/>
+              </svg>
+            </span>
+          </span>
+        `;
+      }
+
+      /* CAFST Logo Chip (Center Logo) */
+      function cafstLogoSVG(size = 24) {
+        const src = state.customCafstLogo || "image/cafst.png";
+        const pad = Math.max(4, Math.round(size * 0.14));
+        const chipSize = size + pad * 2;
+        return `
+          <span class="cpc-logo-chip" style="width:${chipSize}px;height:${chipSize}px;padding:${pad}px;">
+            <img
+              src="${src}"
+              width="${size}"
+              height="${size}"
+              alt="CAFST logo"
+              style="width:100%;height:100%;object-fit:contain;border-radius:6px;"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"
+            />
+            <span
+              style="display:none;align-items:center;justify-content:center;width:100%;height:100%;color:#064e36;font-weight:800;font-size:${Math.round(size * 0.28)}px;"
+              aria-hidden="true"
+            >CAFST</span>
+          </span>
+        `;
+      }
+
+      /* Kampong Speu Institute of Technology (KSIT) Logo Chip */
+      function ksitLogoSVG(size = 20) {
+        const src = state.customKsitLogo || "image/ksit.png";
+        const pad = Math.max(4, Math.round(size * 0.14));
+        const chipSize = size + pad * 2;
+        return `
+          <span class="cpc-logo-chip" style="width:${chipSize}px;height:${chipSize}px;padding:${pad}px;">
+            <img
+              src="${src}"
+              width="${size}"
+              height="${size}"
+              alt="Kampong Speu Institute of Technology (KSIT) logo"
+              style="width:100%;height:100%;object-fit:contain;border-radius:6px;"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"
+            />
+            <span
+              style="display:none;align-items:center;justify-content:center;width:100%;height:100%;color:#064e36;font-weight:800;font-size:${Math.round(size * 0.36)}px;"
+              aria-hidden="true"
+            >KSIT</span>
+          </span>
+        `;
+      }
+
+      function setCpcLogoFile(file) {
+        if (!file || !file.type.startsWith("image/")) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          state.customCpcLogo = e.target.result;
+          renderApp();
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function handleCpcDrop(event) {
+        event.preventDefault();
+        event.currentTarget.classList.remove("drag-over");
+        const file = event.dataTransfer && event.dataTransfer.files[0];
+        if (file) setCpcLogoFile(file);
+      }
+
+      function handleCpcFileInput(event) {
+        const file = event.target && event.target.files[0];
+        if (file) setCpcLogoFile(file);
+      }
+
+      function setCafstLogoFile(file) {
+        if (!file || !file.type.startsWith("image/")) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          state.customCafstLogo = e.target.result;
+          renderApp();
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function handleCafstDrop(event) {
+        event.preventDefault();
+        event.currentTarget.classList.remove("drag-over");
+        const file = event.dataTransfer && event.dataTransfer.files[0];
+        if (file) setCafstLogoFile(file);
+      }
+
+      function handleCafstFileInput(event) {
+        const file = event.target && event.target.files[0];
+        if (file) setCafstLogoFile(file);
+      }
+
+      function setKsitLogoFile(file) {
+        if (!file || !file.type.startsWith("image/")) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          state.customKsitLogo = e.target.result;
+          renderApp();
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function handleKsitDrop(event) {
+        event.preventDefault();
+        event.currentTarget.classList.remove("drag-over");
+        const file = event.dataTransfer && event.dataTransfer.files[0];
+        if (file) setKsitLogoFile(file);
+      }
+
+      function handleKsitFileInput(event) {
+        const file = event.target && event.target.files[0];
+        if (file) setKsitLogoFile(file);
+      }
+
+      function renderNav() {
+        const t = CONTENT[state.lang];
+        document.getElementById("navLogo").innerHTML = logoSVG(64, false);
+        document.getElementById("langLabel").textContent =
+          state.lang === "en" ? "ខ្មែរ" : "EN";
+
+        document.getElementById("desktopNav").innerHTML = t.nav
+          .map(
+            (item) =>
+              `<button class="nav-link ${state.activeSection === item.id ? "active" : ""}" onclick="scrollToSection('${item.id}')">${item.label}</button>`,
+          )
+          .join("");
+
+        document.getElementById("mobileNavGrid").innerHTML = t.nav
+          .map(
+            (item) =>
+              `<button class="mobile-nav-link ${state.activeSection === item.id ? "active" : ""}" onclick="scrollToSection('${item.id}')">${item.label}</button>`,
+          )
+          .join("");
+      }
+
+      function renderProcessCard(step, idx) {
+        const delayStyle = `transition-delay: ${idx * 75}ms;`;
+        const iconName = step.fallbackIcon || step.icon;
+        return `
+          <div
+            class="card process-card glass-sheen"
+            data-reveal
+            style="${delayStyle}"
+            onclick="openStepLightbox(${idx})"
+            role="button"
+            tabindex="0"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openStepLightbox(${idx});}"
+            aria-label="${step.num}: ${step.title}"
+          >
+            <div class="process-photo-wrap">
+              <img
+                src="image/${step.file}.jpg"
+                alt="${step.num} — ${step.title}"
+                onerror="handleStepImgError(this, '${step.file}')"
+              />
+              <div class="process-photo-fallback">
+                <i data-lucide="${iconName}" style="width:36px;height:36px;"></i>
+              </div>
+              <span class="process-step-badge">
+                <i data-lucide="${iconName}" style="width:13px;height:13px;"></i>
+                <span>${step.num}</span>
+              </span>
+              <span class="process-zoom-badge" aria-hidden="true">
+                <i data-lucide="maximize-2" style="width:14px;height:14px;"></i>
+              </span>
+            </div>
+            <h3 class="process-card-title">${step.title}</h3>
+            <p class="process-card-desc">${step.desc}</p>
+            <span class="process-card-tag">
+              <i data-lucide="check-circle-2" style="width:14px;height:14px;"></i>
+              <span>${step.tag}</span>
+            </span>
+          </div>
+        `;
+      }
+
+      function openStepLightbox(idx) {
+        state.lightboxIndex = idx;
+        updateStepLightbox();
+        document.getElementById("stepLightbox").classList.add("open");
+      }
+
+      function closeStepLightbox() {
+        state.lightboxIndex = null;
+        document.getElementById("stepLightbox").classList.remove("open");
+      }
+
+      function navigateStepLightbox(dir) {
+        if (state.lightboxIndex === null) return;
+        const steps = CONTENT[state.lang].process.steps;
+        state.lightboxIndex =
+          (state.lightboxIndex + dir + steps.length) % steps.length;
+        updateStepLightbox();
+      }
+
+      function updateStepLightbox() {
+        if (state.lightboxIndex === null) return;
+        const step = CONTENT[state.lang].process.steps[state.lightboxIndex];
+        const iconName = step.fallbackIcon || step.icon;
+        document.getElementById("lightboxStepLabel").textContent = step.num;
+        document.getElementById("lightboxTitle").textContent = step.title;
+        document.getElementById("lightboxDesc").textContent = step.desc;
+        document.getElementById("lightboxMedia").innerHTML = `
+          <img
+            src="image/${step.file}.jpg"
+            alt="${step.num} — ${step.title}"
+            onerror="handleStepImgError(this, '${step.file}')"
+          />
+          <div class="process-photo-fallback" style="height:260px;">
+            <i data-lucide="${iconName}" style="width:48px;height:48px;"></i>
+          </div>
+        `;
+        refreshIcons();
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (state.lightboxIndex === null) return;
+        if (e.key === "Escape") closeStepLightbox();
+        if (e.key === "ArrowLeft") navigateStepLightbox(-1);
+        if (e.key === "ArrowRight") navigateStepLightbox(1);
+      });
+
+      /* Project Advisor Card (គ្រូដឹកនាំគម្រោង) */
+      function renderAdvisorCard(advisor, t) {
+        return `
+          <div class="advisor-row">
+            <div class="card team-card is-advisor glass-sheen" data-reveal>
+              <div class="avatar-wrap">
+                <div class="avatar-ring">
+                  <div class="avatar-inner">
+                    <img
+                      src="image/${advisor.file}.jpg"
+                      alt="${advisor.name}"
+                      onerror="handleStepImgError(this, '${advisor.file}')"
+                    />
+                    <span style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">
+                      <i data-lucide="user" style="width:40px;height:40px;"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <h3 style="font-size:1.18rem;font-weight:700;">${advisor.name}</h3>
+              <span class="team-badge advisor-badge">
+                <i data-lucide="graduation-cap" style="width:15px;height:15px;"></i>
+                ${t.team.advisorLabel}
+              </span>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderMemberCard(m, t, idx) {
+        const delayStyle = `transition-delay: ${idx * 75}ms;`;
+        const avatarBlock = `
+          <div class="avatar-wrap">
+            <div class="avatar-ring">
+              <div class="avatar-inner">
+                ${
+                  m.photo
+                    ? `<img src="${m.photo}" alt="${m.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                       <span style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">
+                         <i data-lucide="user" style="width:38px;height:38px;"></i>
+                       </span>`
+                    : `<i data-lucide="user" style="width:38px;height:38px;"></i>`
+                }
+              </div>
+            </div>
+          </div>
+          <h3 style="font-size:1.1rem;font-weight:700;">${m.name}</h3>
+        `;
+
+        // 1. Team Leader Card
+        if (m.type === "leader") {
+          return `
+            <div class="card team-card glass-sheen" data-reveal style="${delayStyle}">
+              ${avatarBlock}
+              <span class="team-badge leader-badge">
+                <i data-lucide="crown" style="width:14px;height:14px;"></i>
+                ${t.team.leaderLabel}
+              </span>
+            </div>
+          `;
+        }
+
+        // 2. Website Developer Card (Clickable link to Portfolio)
+        if (m.type === "developer") {
+          return `
+            <a
+              href="${m.portfolioUrl}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card team-card is-developer glass-sheen"
+              data-reveal
+              style="${delayStyle}"
+              aria-label="${m.name} — ${t.team.devLabel}"
+            >
+              ${avatarBlock}
+              <span class="team-badge dev-badge">
+                <i data-lucide="code-2" style="width:14px;height:14px;"></i>
+                ${t.team.devLabel}
+              </span>
+              <span class="portfolio-hint">
+                <span>${t.team.portfolioHint}</span>
+                <i data-lucide="external-link" style="width:13px;height:13px;"></i>
+              </span>
+            </a>
+          `;
+        }
+
+        // 3. Simple Member Cards (3 members)
+        return `
+          <div class="card team-card glass-sheen" data-reveal style="${delayStyle}">
+            ${avatarBlock}
+            <p class="team-simple-role">${t.team.memberLabel}</p>
+          </div>
+        `;
+      }
+
+      /* Scroll-Reveal Observer */
+      let revealObserver = null;
+      function initScrollReveal() {
+        const targets = document.querySelectorAll("[data-reveal]");
+        if (revealObserver) revealObserver.disconnect();
+
+        if (!("IntersectionObserver" in window)) {
+          targets.forEach((el) => el.classList.add("revealed"));
+          return;
+        }
+
+        revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -30px 0px" },
+        );
+
+        targets.forEach((el) => revealObserver.observe(el));
+      }
+
+      /* Scroll-Driven Parallax Motion on All Banana Tree & Cassava Layers */
+      function updateShapeParallax() {
+        const parallaxItems = document.querySelectorAll("[data-parallax]");
+        const vh = window.innerHeight || 800;
+
+        parallaxItems.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const speed = parseFloat(el.getAttribute("data-parallax")) || 0.15;
+          const rot = parseFloat(el.getAttribute("data-rotate")) || 0.04;
+          const offsetFromCenter = rect.top + rect.height / 2 - vh / 2;
+          const translateY = Math.round(offsetFromCenter * speed * -0.32);
+          const rotateDeg = (offsetFromCenter * rot * -0.04).toFixed(2);
+          el.style.transform = `translate3d(0, ${translateY}px, 0) rotate(${rotateDeg}deg)`;
+        });
+      }
+
+      function renderApp() {
+        const t = CONTENT[state.lang];
+        document.body.classList.toggle("lang-km", state.lang === "km");
+        renderNav();
+
+        document.getElementById("appMain").innerHTML = `
+          <!-- HOME / HERO -->
+          <section id="hero" class="hero">
+            <!-- Animated Banana Tree & Cassava Background Layer -->
+            <div class="botanical-bg-layer on-dark" aria-hidden="true">
+              ${renderBotanicalProp({
+                type: "banana",
+                wrapStyle: "top:-2rem;right:-5rem;width:540px;height:540px;",
+                parallax: 0.3,
+                rotate: 0.12,
+                delay: "0s",
+              })}
+              ${renderBotanicalProp({
+                type: "banana",
+                wrapStyle: "bottom:-4rem;left:-6rem;width:400px;height:400px;",
+                parallax: -0.22,
+                rotate: -0.1,
+                flipped: true,
+                soft: true,
+                delay: "-3.2s",
+              })}
+              ${renderBotanicalProp({
+                type: "cassava",
+                wrapStyle: "bottom:1.5rem;left:34%;width:340px;height:240px;",
+                parallax: 0.38,
+                rotate: 0.15,
+                delay: "-1.5s",
+              })}
+              ${renderBotanicalProp({
+                type: "cassava",
+                wrapStyle: "top:2.5rem;left:18%;width:240px;height:170px;",
+                parallax: -0.32,
+                rotate: -0.14,
+                flipped: true,
+                soft: true,
+                delay: "-5.5s",
+              })}
+            </div>
+
+            <div class="container">
+              <div class="hero-grid">
+                <div data-reveal>
+                  <!-- Large Triple-Logo Apple Glass Pill (CPC + CAFST + KSIT, No Text) -->
+                  <div class="hero-logos-pill glass-sheen">
+                    <label
+                      class="hero-logo-slot"
+                      title="Cambodia Packaging Center (CPC) — Click or drop image to update logo"
+                      ondragover="event.preventDefault();this.classList.add('drag-over');"
+                      ondragleave="this.classList.remove('drag-over');"
+                      ondrop="handleCpcDrop(event)"
+                    >
+                      <input
+                        type="file"
+                        accept="image/*"
+                        style="display:none;"
+                        onchange="handleCpcFileInput(event)"
+                      />
+                      ${cpcLogoSVG(54)}
+                    </label>
+
+                    <span class="hero-logos-divider" aria-hidden="true"></span>
+
+                    <label
+                      class="hero-logo-slot"
+                      title="CAFST — Click or drop image to update logo"
+                      ondragover="event.preventDefault();this.classList.add('drag-over');"
+                      ondragleave="this.classList.remove('drag-over');"
+                      ondrop="handleCafstDrop(event)"
+                    >
+                      <input
+                        type="file"
+                        accept="image/*"
+                        style="display:none;"
+                        onchange="handleCafstFileInput(event)"
+                      />
+                      ${cafstLogoSVG(54)}
+                    </label>
+
+                    <span class="hero-logos-divider" aria-hidden="true"></span>
+
+                    <label
+                      class="hero-logo-slot"
+                      title="Kampong Speu Institute of Technology (KSIT) — Click or drop image to update logo"
+                      ondragover="event.preventDefault();this.classList.add('drag-over');"
+                      ondragleave="this.classList.remove('drag-over');"
+                      ondrop="handleKsitDrop(event)"
+                    >
+                      <input
+                        type="file"
+                        accept="image/*"
+                        style="display:none;"
+                        onchange="handleKsitFileInput(event)"
+                      />
+                      ${ksitLogoSVG(54)}
+                    </label>
+                  </div>
+
+                  <p class="hero-brand">${t.brand}</p>
+                  <h1 class="hero-title">${t.heroTitle}</h1>
+                  <p class="hero-subtitle">
+                    <i data-lucide="leaf" style="width:20px;height:20px;color:#A3D977;"></i>
+                    <span>${t.heroSubtitle}</span>
+                  </p>
+                  <p class="hero-desc">${t.heroDesc}</p>
+
+                  <div class="btn-group">
+                    <button class="btn-primary glass-sheen" onclick="scrollToSection('process')">
+                      <span>${t.ctaExplore}</span>
+                      <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                    </button>
+                    <button class="btn-outline-light glass-sheen" onclick="scrollToSection('team')">
+                      <span>${t.ctaLearn}</span>
+                    </button>
+                  </div>
+
+                  <div class="hero-badges-row">
+                    ${t.heroBadges
+                      .map(
+                        (b) => `
+                      <span class="hero-pill glass-sheen">
+                        <i data-lucide="check-circle-2" style="width:14px;height:14px;color:#A3D977;"></i>
+                        ${b}
+                      </span>
+                    `,
+                      )
+                      .join("")}
+                  </div>
+                </div>
+
+                <div class="hero-visual-wrap" data-reveal style="transition-delay:120ms;">
+                  <div class="hero-image-card glass-sheen">
+                    <div class="hero-image-inner">
+                      <img src="${HERO_IMG}" alt="GlyChek Biodegradable Eco-Packaging" />
+                      <div class="hero-image-gradient"></div>
+                      <div class="hero-image-overlay">
+                        <div>
+                          <p class="hero-overlay-tag">GlyChek Bio-Composite</p>
+                          <p class="hero-overlay-title">Banana Stem Fiber + Cassava Starch</p>
+                        </div>
+                        <div class="hero-overlay-icon">
+                          <i data-lucide="recycle" style="width:20px;height:20px;"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="floating-eco-card glass-sheen">
+                    <div class="floating-eco-icon">
+                      <i data-lucide="sprout" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div>
+                      <p style="font-size:12px;font-weight:700;line-height:1.2;">100% Plant-Based</p>
+                      <p style="font-size:11px;color:#4B6355;">Cambodia Eco-Innovation</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PROCESS (DEDICATED 1-PAGE SPACE BETWEEN HOME & TEAM — STEPS 1 TO 7) -->
+          <section id="process" class="section process-section">
+            <div class="botanical-bg-layer on-surface" aria-hidden="true">
+              ${renderBotanicalProp({
+                type: "banana",
+                wrapStyle: "top:1rem;right:-5.5rem;width:440px;height:440px;",
+                parallax: 0.28,
+                rotate: 0.1,
+                delay: "-1.2s",
+              })}
+              ${renderBotanicalProp({
+                type: "cassava",
+                wrapStyle: "bottom:1.5rem;left:-4rem;width:380px;height:260px;",
+                parallax: -0.25,
+                rotate: -0.12,
+                delay: "-4s",
+              })}
+            </div>
+
+            <div class="container">
+              <div class="section-header" data-reveal>
+                <span class="eyebrow glass-sheen"><i data-lucide="settings-2" style="width:14px;height:14px;"></i> ${t.process.eyebrow}</span>
+                <h2 class="section-title">${t.process.title}</h2>
+                <p class="section-subtitle">${t.process.subtitle}</p>
+              </div>
+
+              <div class="process-grid">
+                ${t.process.steps.map((step, idx) => renderProcessCard(step, idx)).join("")}
+              </div>
+            </div>
+          </section>
+
+          <!-- OUR TEAM -->
+          <section id="team" class="section section-alt">
+            <!-- Animated Banana Tree & Cassava Background Layer -->
+            <div class="botanical-bg-layer on-surface" aria-hidden="true">
+              ${renderBotanicalProp({
+                type: "banana",
+                wrapStyle: "top:2rem;left:-5.5rem;width:420px;height:420px;",
+                parallax: 0.26,
+                rotate: 0.1,
+                flipped: true,
+                delay: "-2.5s",
+              })}
+              ${renderBotanicalProp({
+                type: "cassava",
+                wrapStyle:
+                  "bottom:1rem;right:-3.5rem;width:360px;height:250px;",
+                parallax: -0.28,
+                rotate: -0.12,
+                flipped: true,
+                delay: "-6s",
+              })}
+            </div>
+
+            <div class="container">
+              <div class="section-header" data-reveal>
+                <span class="eyebrow glass-sheen"><i data-lucide="users" style="width:14px;height:14px;"></i> ${t.team.eyebrow}</span>
+                <h2 class="section-title">${t.team.title}</h2>
+                <p class="section-subtitle">${t.team.subtitle}</p>
+              </div>
+
+              <!-- Project Advisor (គ្រូដឹកនាំគម្រោង) -->
+              ${renderAdvisorCard(t.team.advisor, t)}
+
+              <!-- Student Team Members -->
+              <div class="team-grid">
+                ${t.team.members.map((m, idx) => renderMemberCard(m, t, idx)).join("")}
+              </div>
+            </div>
+          </section>
+
+          <!-- OUR VISION FOR TOMORROW -->
+          <section id="conclusion" class="conclusion">
+            <!-- Animated Banana Tree & Cassava Background Layer -->
+            <div class="botanical-bg-layer on-dark" aria-hidden="true">
+              ${renderBotanicalProp({
+                type: "banana",
+                wrapStyle: "bottom:-2rem;left:-3rem;width:380px;height:380px;",
+                parallax: 0.28,
+                rotate: 0.12,
+                delay: "-1.8s",
+              })}
+              ${renderBotanicalProp({
+                type: "cassava",
+                wrapStyle:
+                  "bottom:0.5rem;right:-2rem;width:360px;height:250px;",
+                parallax: -0.3,
+                rotate: -0.14,
+                flipped: true,
+                delay: "-4.8s",
+              })}
+            </div>
+
+            <div class="container">
+              <div class="conclusion-inner" data-reveal>
+                <span class="hero-badge glass-sheen" style="margin-bottom:0;padding:0.4rem 1rem;">
+                  <i data-lucide="sprout" style="width:14px;height:14px;"></i>
+                  ${t.conclusion.eyebrow}
+                </span>
+                <h2>${t.conclusion.title}</h2>
+                <p>${t.conclusion.desc}</p>
+                <div class="btn-group">
+                  <button class="btn-primary glass-sheen" onclick="scrollToSection('hero')">
+                    <span>${t.conclusion.ctaPrimary}</span>
+                    <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                  </button>
+                  <button class="btn-outline-light glass-sheen" onclick="scrollToSection('team')">
+                    <span>${t.conclusion.ctaSecondary}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+
+        // FOOTER & CONTACT
+        document.getElementById("footer").innerHTML = `
+          <div class="container">
+            <div class="footer-thanks" data-reveal>
+              <div>${logoSVG(96, true)}</div>
+              <h2>${t.footer.thankYou} <span class="font-khmer">/ ${t.footer.thankYouKm}</span></h2>
+              <p class="footer-tagline">${t.footer.tagline}</p>
+            </div>
+
+            <div class="footer-grid" data-reveal>
+              <div>
+                <p class="font-display" style="font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:0.75rem;">GlyChek</p>
+                <p style="font-size:0.88rem;color:rgba(255,255,255,0.75);max-width:28rem;margin-bottom:1rem;">${t.footer.desc}</p>
+
+                <div class="footer-badges-stack">
+                  <label
+                    class="hero-badge glass-sheen"
+                    style="margin-bottom:0;font-size:0.75rem;"
+                    title="Kampong Speu Institute of Technology (KSIT) — Click or drop image to update logo"
+                    ondragover="event.preventDefault();this.classList.add('drag-over');"
+                    ondragleave="this.classList.remove('drag-over');"
+                    ondrop="handleKsitDrop(event)"
+                  >
+                    <input
+                      type="file"
+                      accept="image/*"
+                      style="display:none;"
+                      onchange="handleKsitFileInput(event)"
+                    />
+                    ${ksitLogoSVG(20)}
+                    <span>${t.footer.institute}</span>
+                  </label>
+
+                  <label
+                    class="hero-badge glass-sheen"
+                    style="margin-bottom:0;font-size:0.75rem;"
+                    title="CAFST — Click or drop image to update logo"
+                    ondragover="event.preventDefault();this.classList.add('drag-over');"
+                    ondragleave="this.classList.remove('drag-over');"
+                    ondrop="handleCafstDrop(event)"
+                  >
+                    <input
+                      type="file"
+                      accept="image/*"
+                      style="display:none;"
+                      onchange="handleCafstFileInput(event)"
+                    />
+                    ${cafstLogoSVG(20)}
+                    <span>${t.footer.cafst}</span>
+                  </label>
+
+                  <span class="hero-badge glass-sheen" style="margin-bottom:0;font-size:0.75rem;">
+                    ${cpcLogoSVG(20)}
+                    <span>${t.footer.event}</span>
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="footer-col-title">${t.footer.navTitle}</h3>
+                <ul class="footer-nav-grid">
+                  ${t.nav
+                    .map(
+                      (item) => `
+                    <li><button class="footer-link" onclick="scrollToSection('${item.id}')">${item.label}</button></li>
+                  `,
+                    )
+                    .join("")}
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="footer-col-title">${t.footer.contactTitle}</h3>
+                <ul class="footer-details">
+                  <li>
+                    <a
+                      href="${t.footer.telegramUrl}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contact-link glass-sheen"
+                    >
+                      <i data-lucide="send" style="width:16px;height:16px;color:#A3D977;"></i>
+                      <span>Telegram: ${t.footer.telegramText}</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="${t.footer.phoneHref}" class="contact-link glass-sheen">
+                      <i data-lucide="phone" style="width:16px;height:16px;color:#A3D977;"></i>
+                      <span>${t.footer.phoneText}</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>${t.footer.copyright}</p>
+              <p>GlyChek • Eco-Banana Stem Cassava Packaging</p>
+            </div>
+          </div>
+        `;
+
+        refreshIcons();
+        initScrollReveal();
+        updateShapeParallax();
+        if (state.lightboxIndex !== null) updateStepLightbox();
+      }
+
+      function scrollToSection(id) {
+        state.mobileMenuOpen = false;
+        state.activeSection = id;
+        document.getElementById("mobileDrawer").classList.remove("open");
+        document.getElementById("mobileMenuBtn").innerHTML =
+          '<i data-lucide="menu" style="width:18px;height:18px;"></i>';
+        renderNav();
+        refreshIcons();
+
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.getElementById("langToggle").addEventListener("click", () => {
+        state.lang = state.lang === "en" ? "km" : "en";
+        renderApp();
+      });
+
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        state.darkMode = !state.darkMode;
+        document.body.classList.toggle("dark", state.darkMode);
+        document.getElementById("themeToggle").innerHTML = state.darkMode
+          ? '<i data-lucide="sun" style="width:16px;height:16px;"></i>'
+          : '<i data-lucide="moon" style="width:16px;height:16px;"></i>';
+        refreshIcons();
+      });
+
+      document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+        state.mobileMenuOpen = !state.mobileMenuOpen;
+        document
+          .getElementById("mobileDrawer")
+          .classList.toggle("open", state.mobileMenuOpen);
+        document.getElementById("mobileMenuBtn").innerHTML =
+          state.mobileMenuOpen
+            ? '<i data-lucide="x" style="width:18px;height:18px;"></i>'
+            : '<i data-lucide="menu" style="width:18px;height:18px;"></i>';
+        refreshIcons();
+      });
+
+      let scrollTicking = false;
+      window.addEventListener(
+        "scroll",
+        () => {
+          const y = window.scrollY;
+          const isScrolled = y > 24;
+          let navNeedsUpdate = false;
+
+          if (isScrolled !== state.scrolled) {
+            state.scrolled = isScrolled;
+            document
+              .getElementById("navbar")
+              .classList.toggle("scrolled", isScrolled);
+            navNeedsUpdate = true;
+          }
+
+          const sectionIds = [
+            "hero",
+            "process",
+            "team",
+            "conclusion",
+            "footer",
+          ];
+          let current = "hero";
+          for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top <= 160) {
+              current = id;
+            }
+          }
+          if (
+            window.innerHeight + Math.round(y) >=
+            document.body.offsetHeight - 40
+          ) {
+            current = "footer";
+          }
+
+          if (current !== state.activeSection) {
+            state.activeSection = current;
+            navNeedsUpdate = true;
+          }
+
+          if (navNeedsUpdate) {
+            renderNav();
+          }
+
+          document
+            .getElementById("backToTop")
+            .classList.toggle("show", y > 350);
+
+          if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+              updateShapeParallax();
+              scrollTicking = false;
+            });
+            scrollTicking = true;
+          }
+        },
+        { passive: true },
+      );
+
+      renderApp();
+    </script>
+  </body>
+</html>
